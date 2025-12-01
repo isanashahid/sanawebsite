@@ -280,13 +280,13 @@ export default function HeroV2() {
 
       {/* Slider Revolution Style Particles */}
       <div className="slider-particles-container">
-        {[...Array(20)].map((_, i) => (
+        {typeof window !== 'undefined' && [...Array(20)].map((_, i) => (
           <motion.div
             key={i}
             className="slider-particle"
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1920),
+              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1080),
               scale: Math.random() * 0.5 + 0.5,
             }}
             animate={{
